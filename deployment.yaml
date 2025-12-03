@@ -16,9 +16,9 @@ spec:
       containers:
         - name: portfolio
           image: nikhil2202/portfolio:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
-          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
@@ -30,7 +30,6 @@ spec:
   selector:
     app: portfolio
   ports:
-    - name: http
-      port: 80
+    - port: 80
       targetPort: 80
       nodePort: 30080
