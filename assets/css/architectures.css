@@ -1,0 +1,333 @@
+/* ============================================================
+   ARCHITECTURE GALLERY & UPLOAD UI
+   ============================================================ */
+
+.architectures {
+  padding: 8rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.arch-upload-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+}
+
+.arch-upload-container h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--theme-primary);
+  font-size: 1.5rem;
+}
+
+.arch-upload-warning {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  background: rgba(var(--theme-primary-rgb), 0.1);
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--theme-primary);
+  border-radius: 4px;
+}
+
+.arch-upload-warning i {
+  margin-right: 0.5rem;
+  color: var(--theme-primary);
+}
+
+.arch-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.arch-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.arch-form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.arch-form-group input[type="text"],
+.arch-form-group textarea {
+  background: var(--bg-darker);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.arch-form-group input[type="text"]:focus,
+.arch-form-group textarea:focus {
+  outline: none;
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 3px rgba(var(--theme-primary-rgb), 0.2);
+}
+
+.arch-form-group input[type="file"] {
+  display: none;
+}
+
+.arch-file-label {
+  display: inline-block;
+  background: var(--bg-darker);
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
+}
+
+.arch-file-label:hover {
+  border-color: var(--theme-primary);
+  color: var(--theme-primary);
+  background: rgba(var(--theme-primary-rgb), 0.05);
+}
+
+.arch-file-label i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.arch-file-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.arch-upload-form .btn {
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  background: var(--theme-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arch-upload-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--theme-primary-rgb), 0.4);
+}
+
+/* Gallery Grid */
+.arch-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.arch-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.arch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.arch-img-wrapper {
+  width: 100%;
+  background: var(--bg-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.arch-img-wrapper img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+}
+
+.arch-card-content {
+  padding: 2rem;
+}
+
+.arch-card-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 1.4rem;
+}
+
+.arch-card-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.arch-delete-btn {
+  margin-top: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.arch-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+@media (min-width: 992px) {
+  .arch-upload-container {
+    padding: 3rem;
+  }
+}
+
+
+/* ============================================================
+   PROJECTS TABS UI
+   ============================================================ */
+.projects-tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.project-tab-btn {
+  background: var(--bg-darker);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-tab-btn:hover {
+  background: rgba(var(--theme-primary-rgb), 0.1);
+  color: var(--theme-primary);
+  border-color: var(--theme-primary);
+}
+
+.project-tab-btn.active {
+  background: var(--theme-primary);
+  color: #fff;
+  border-color: var(--theme-primary);
+  box-shadow: 0 4px 15px rgba(var(--theme-primary-rgb), 0.4);
+}
+
+.project-tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.project-tab-content.active {
+  display: block;
+}
+
+/* ============================================================
+   UPLOAD MODAL UI
+   ============================================================ */
+.arch-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.arch-modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+
+.arch-modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--theme-primary);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.arch-modal-overlay.open .arch-modal-content {
+  transform: translateY(0);
+}
+
+.arch-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.arch-modal-header h3 {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.4rem;
+}
+
+.arch-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.arch-modal-close:hover {
+  color: #ef4444;
+}
+
+.arch-upload-container {
+  display: none !important; /* Hide old inline container completely */
+}

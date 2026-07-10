@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture Gallery | Nikhil Repale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css?v=1782973932910">
+  <link rel="stylesheet" href="./assets/css/professional-upgrade.css?v=1782973932910">
+  <link rel="stylesheet" href="./assets/css/architectures.css?v=1782973932910">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css?v=1782973932910">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .arch-page-header {
+      padding: 2rem;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .arch-page-header h2 {
+      margin: 0;
+      color: var(--theme-primary);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .arch-page-header .actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .back-btn {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .back-btn:hover {
+      color: var(--text-light);
+    }
+    .main-content {
+      flex: 1;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    /* Override tab styling since this is standalone */
+    #ptab-architecture-gallery {
+      display: block !important;
+      animation: none;
+    }
+    .arch-header-actions {
+      display: none !important; /* Hide old inline actions */
+    }
+  </style>
+</head>
+<body>
+  <!-- 3D Global Background -->
+  <canvas id="devops-3d-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events: none;"></canvas>
+
+
+  <!-- Header -->
+  <header class="arch-page-header">
+    <h2><i class="fas fa-sitemap"></i> Architecture Gallery</h2>
+    <div class="actions">
+      <a href="index.html#projects" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      <a href="upload.html" class="btn"><i class="fas fa-upload"></i> Upload New</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="arch-gallery-grid" id="arch-gallery-grid">
+      <!-- JavaScript will populate this grid -->
+    </div>
+  </main>
+
+  <!-- Load Gallery Logic -->
+  <script src="./assets/js/architecture-gallery.js?v=1782969960705"></script>
+
+  <!-- Three.js Global Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js?v=1782969960705"></script>
+      <script src="./assets/js/devops-3d-bg.js" defer></script>
+</body>
+</html>

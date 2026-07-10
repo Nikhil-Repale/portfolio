@@ -82,7 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
       successMessage.textContent = "Thanks! Your message is saved locally. Please email me directly for the fastest reply.";
       form.reset();
     });
-    const devopsToolData = {
+  }
+
+  window.devopsToolData = {
       aws: {
         title: "Amazon Web Services",
         subtitle: "Cloud Infrastructure & Scalable Services",
@@ -1174,7 +1176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load active tool data into the UI
     const loadToolPlaybook = (toolKey) => {
-      const data = devopsToolData[toolKey];
+      const data = window.devopsToolData[toolKey];
       if (!data) return;
 
       activeTool = toolKey;
@@ -1313,7 +1315,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render filtered troubleshooting scenarios based on active category tab
     const renderFilteredScenarios = (toolKey) => {
-      const data = devopsToolData[toolKey];
+      const data = window.devopsToolData[toolKey];
       if (!data || !data.scenarios) return;
 
       scenarioList.innerHTML = "";
@@ -1361,7 +1363,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load scenario details into the CLI Terminal
     const loadScenarioDetails = (toolKey, scenarioIdx) => {
-      const data = devopsToolData[toolKey];
+      const data = window.devopsToolData[toolKey];
       if (!data || !data.scenarios[scenarioIdx]) return;
 
       const sc = data.scenarios[scenarioIdx];
@@ -1380,7 +1382,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load Commands Reference Tab
     const loadCommandsTab = (toolKey) => {
-      const data = devopsToolData[toolKey];
+      const data = window.devopsToolData[toolKey];
       if (!data || !data.commands) return;
 
       activeCommandCategory = "All";
@@ -1411,7 +1413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Render filtered commands based on search and category
     const renderFilteredCommands = (toolKey) => {
-      const data = devopsToolData[toolKey];
+      const data = window.devopsToolData[toolKey];
       if (!data || !data.commands) return;
 
       const searchTerm = commandsSearch ? commandsSearch.value.toLowerCase().trim() : "";
@@ -1465,7 +1467,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Terminal typing simulation
     const executeTerminalPlaybook = () => {
-      const data = devopsToolData[activeTool];
+      const data = window.devopsToolData[activeTool];
       if (!data || !data.scenarios[activeScenarioIndex] || isTyping) return;
 
       isTyping = true;
@@ -1543,7 +1545,12 @@ document.addEventListener("DOMContentLoaded", () => {
       printNextOutputLine();
     };
 
-    // Wire up tool selector
+    // ── Hub interaction wiring is handled by assets/js/hub-controller.js ──
+    // hub-controller.js uses event delegation and runs at window.load,
+    // ensuring all dynamically-injected tool data is available first.
+    // The old per-element listeners below have been disabled.
+
+    /*
     toolSelectorBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         if (isTyping) return;
@@ -1595,7 +1602,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Copy command button
     btnCopyCommand.addEventListener("click", () => {
-      const data = devopsToolData[activeTool];
+      const data = window.devopsToolData[activeTool];
       if (!data || !data.scenarios[activeScenarioIndex]) return;
 
       const cmdText = data.scenarios[activeScenarioIndex].cmd;
@@ -1616,5 +1623,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize with AWS
     loadToolPlaybook("aws");
-  }
+    */
 });

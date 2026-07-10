@@ -106,8 +106,8 @@ section {
 header {
   align-items: center;
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 1rem 3rem rgba(15, 23, 42, 0.04);
   display: flex;
@@ -276,7 +276,7 @@ body.dark-theme .home {
 .hero-metrics {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* removed hardcoded grid columns for flexbox */
   margin-top: 2.8rem;
 }
 
@@ -388,8 +388,9 @@ body.dark-theme .hero-metrics article {
 }
 
 .tool-selector-grid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.2rem;
 }
 
@@ -2512,7 +2513,7 @@ button[type="submit"] {
 
 
   .tool-selector-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* removed hardcoded grid columns for flexbox */
   }
 
   .overview-grid {
@@ -2548,7 +2549,7 @@ button[type="submit"] {
 
 
   .skill-groups,
-  .tool-selector-grid,
+  
   .workflow-timeline,
   .education-list article,
   .timeline article {
@@ -2566,4 +2567,43 @@ button[type="submit"] {
   .footer-links {
     flex-wrap: wrap;
   }
+}
+
+
+/* ==========================================================================
+   GLOBAL 3D BACKGROUND OVERRIDES (Make sections transparent)
+   ========================================================================== */
+section.home,
+section.about,
+section.skills,
+section.projects,
+section.education,
+section.certificates,
+section.contact {
+  background: transparent !important;
+  backdrop-filter: none; /* minimal blur for clarity */
+}
+
+.home .content {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: none;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+
+
+
+/* Badges moved to professional-upgrade.css */
+/* GLOBAL BACKGROUND FIX */
+section.home, section.about, section.skills, section.projects, section.education, section.certificates, section.contact {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+.home .content {
+    background: rgba(15, 23, 42, 0.4) !important;
+    backdrop-filter: blur(4px) !important;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }

@@ -1,0 +1,1127 @@
+/* ==========================================================================
+   SINGLE PREMIUM THEME (DARK SPACE)
+   ========================================================================== */
+html {
+  /* Beautiful subtle gradient for the background */
+  background: linear-gradient(135deg, #050a15, #010308) !important;
+  color: #e2e8f0;
+}
+
+body {
+  /* MUST be transparent so the z-index: -1 3D logo can be seen */
+  background: transparent !important;
+  color: #e2e8f0 !important;
+}
+
+/* Force dark mode colors globally */
+.glass-panel,
+.hub-card,
+.timeline-item-content {
+  background: rgba(10, 15, 30, 0.6) !important;
+  border: 1px solid rgba(0, 240, 255, 0.15) !important;
+  color: #e2e8f0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   PROFESSIONAL DARK THEME (Global Override)
+   ============================================================ */
+/* Remove backgrounds from sections */
+section {
+  background: transparent !important;
+  backdrop-filter: none !important; /* Keep it crystal clear */
+}
+
+/* Specific fix for the home section to let the body background shine completely */
+section.home {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   PREMIUM OBSIDIAN GLASSMORPHISM SYSTEM
+   ========================================================================== */
+
+/* Make all sections beautifully translucent */
+/* Removed broken global section margins */
+
+/* Ensure the DevOps Command Centre is also beautifully glass */
+.devops-hub-card {
+  background: rgba(5, 10, 20, 0.55) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.15) !important;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.05) !important;
+}
+
+/* ==========================================================================
+   CATEGORIZED HERO FLOATING BADGES (Desktop Only)
+   ========================================================================== */
+.hero-float-badges {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  z-index: 10;
+}
+
+.hero-float-badge {
+  background: rgba(10, 15, 25, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 1rem 1.8rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+  backdrop-filter: blur(12px);
+  animation: float-badge 6s ease-in-out infinite;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  min-width: 220px;
+}
+
+.badge-header {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #00f0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.badge-tools {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.hero-float-badge:nth-child(1) {
+  animation-delay: 0.1s;
+  transform: translateX(20px);
+}
+.hero-float-badge:nth-child(2) {
+  animation-delay: 0.8s;
+  transform: translateX(-10px);
+}
+.hero-float-badge:nth-child(3) {
+  animation-delay: 1.5s;
+  transform: translateX(30px);
+}
+.hero-float-badge:nth-child(4) {
+  animation-delay: 2.2s;
+  transform: translateX(5px);
+}
+
+@keyframes float-badge {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) translateX(var(--tx, 0));
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) translateX(var(--tx, 0));
+  }
+  50% {
+    transform: translateY(-10px) translateX(var(--tx, 0));
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0) translateX(var(--tx, 0));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(var(--tx, 0));
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-float-badges {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL STATIC DEVOPS LIFECYCLE BACKGROUND (IMAGE)
+   ========================================================================== */
+
+body.dark-theme 
+
+/* Ensure the body base is completely solid so the image pops */
+
+/* ==========================================================================
+   ORIGINAL BRAND COLORS FOR TOOLS
+   ========================================================================== */
+.selector-btn[data-tool="aws"].active {
+  border-color: #ff9900 !important;
+  color: #ff9900 !important;
+  box-shadow: 0 0 15px rgba(255, 153, 0, 0.3) !important;
+}
+.selector-btn[data-tool="docker"].active {
+  border-color: #2496ed !important;
+  color: #2496ed !important;
+  box-shadow: 0 0 15px rgba(36, 150, 237, 0.3) !important;
+}
+.selector-btn[data-tool="kubernetes"].active {
+  border-color: #326ce5 !important;
+  color: #326ce5 !important;
+  box-shadow: 0 0 15px rgba(50, 108, 229, 0.3) !important;
+}
+.selector-btn[data-tool="jenkins"].active {
+  border-color: #d33833 !important;
+  color: #d33833 !important;
+  box-shadow: 0 0 15px rgba(211, 56, 51, 0.3) !important;
+}
+.selector-btn[data-tool="terraform"].active {
+  border-color: #7b42bc !important;
+  color: #7b42bc !important;
+  box-shadow: 0 0 15px rgba(123, 66, 188, 0.3) !important;
+}
+.selector-btn[data-tool="monitoring"].active {
+  border-color: #e6522c !important;
+  color: #e6522c !important;
+  box-shadow: 0 0 15px rgba(230, 82, 44, 0.3) !important;
+}
+.selector-btn[data-tool="linux"].active {
+  border-color: #fcc624 !important;
+  color: #fcc624 !important;
+  box-shadow: 0 0 15px rgba(252, 198, 36, 0.3) !important;
+}
+.selector-btn[data-tool="openshift"].active {
+  border-color: #ee0000 !important;
+  color: #ee0000 !important;
+  box-shadow: 0 0 15px rgba(238, 0, 0, 0.3) !important;
+}
+.selector-btn[data-tool="digitalocean"].active {
+  border-color: #0080ff !important;
+  color: #0080ff !important;
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.3) !important;
+}
+.selector-btn[data-tool="podman"].active {
+  border-color: #892ca0 !important;
+  color: #892ca0 !important;
+  box-shadow: 0 0 15px rgba(137, 44, 160, 0.3) !important;
+}
+
+/* Keep icon colored when active */
+.selector-btn[data-tool="aws"].active i {
+  color: #ff9900 !important;
+}
+.selector-btn[data-tool="docker"].active i {
+  color: #2496ed !important;
+}
+.selector-btn[data-tool="kubernetes"].active i {
+  color: #326ce5 !important;
+}
+.selector-btn[data-tool="jenkins"].active i {
+  color: #d33833 !important;
+}
+.selector-btn[data-tool="terraform"].active i {
+  color: #7b42bc !important;
+}
+.selector-btn[data-tool="monitoring"].active i {
+  color: #e6522c !important;
+}
+.selector-btn[data-tool="linux"].active i {
+  color: #fcc624 !important;
+}
+.selector-btn[data-tool="openshift"].active i {
+  color: #ee0000 !important;
+}
+.selector-btn[data-tool="digitalocean"].active i {
+  color: #0080ff !important;
+}
+.selector-btn[data-tool="podman"].active i {
+  color: #892ca0 !important;
+}
+
+/* ==========================================================================
+   ULTIMATE SPLIT HERO LAYOUT
+   ========================================================================== */
+.home {
+  padding-top: 12rem !important;
+  padding-bottom: 8rem !important;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Left Content */
+.home-content h1 {
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 800;
+}
+
+.home-content .intro {
+  font-size: 1.8rem;
+  color: #cbd5e1;
+  max-width: 90%;
+  margin-bottom: 4rem;
+  line-height: 1.7;
+}
+
+.hero-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.metric-box {
+  flex: 1;
+  padding: 2rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  background: rgba(10, 15, 25, 0.7) !important;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.metric-box:hover {
+  transform: translateY(-5px);
+  border-color: #00f0ff !important;
+}
+
+.metric-box strong {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.metric-box span {
+  font-size: 1.3rem;
+  color: #00f0ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Right Content: Tech Stack Radar */
+.home-visuals {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tech-stack-radar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 450px;
+  perspective: 1000px;
+}
+
+.tech-card {
+  background: rgba(10, 15, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.tech-card i {
+  font-size: 4.5rem;
+  color: var(--accent);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.tech-card span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 1px;
+}
+
+.tech-card:hover {
+  transform: translateZ(30px) translateY(-10px);
+  border-color: var(--accent);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px var(--accent);
+}
+
+.tech-card:hover i {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px var(--accent));
+}
+
+/* Specific floating animations to make it feel alive */
+.tech-card:nth-child(1) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.tech-card:nth-child(2) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 1s;
+  margin-top: 4rem;
+}
+.tech-card:nth-child(3) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.tech-card:nth-child(4) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 3s;
+  margin-top: 4rem;
+}
+.tech-card:nth-child(5) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 4s;
+}
+.tech-card:nth-child(6) {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: 5s;
+  margin-top: 4rem;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .home-visuals {
+    justify-content: center;
+    margin-top: 4rem;
+  }
+  .tech-card:nth-child(even) {
+    margin-top: 0 !important;
+  }
+  .hero-actions,
+  .hero-metrics {
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .hero-metrics {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL ALIGNMENT & PREMIUM GLASSMORPHISM FIXES
+   ========================================================================== */
+/* Keep sections full width but add padding */
+section {
+  padding: 8rem 9% !important;
+  background: rgba(5, 10, 20, 0.45) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.05);
+}
+
+/* Make sure the Home section (Hero) is completely transparent so the static DevOps logo pops out perfectly */
+section.home {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+}
+
+/* Ensure all cards (projects, education, skills) have solid glassmorphism to contrast the global background */
+.project-card,
+.education-item,
+.skill-category {
+  background: rgba(10, 15, 25, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.1) !important;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.project-card:hover,
+.education-item:hover,
+.skill-category:hover {
+  transform: translateY(-5px);
+  border-color: #00f0ff !important;
+}
+
+/* Fix navbar alignment */
+header {
+  background: rgba(5, 10, 20, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1) !important;
+}
+
+/* Mobile Alignment Fixes */
+@media (max-width: 768px) {
+  section {
+    padding: 6rem 5% !important;
+  }
+}
+
+/* ==========================================================================
+   TRUE GLOBAL STATIC DEVOPS LIFECYCLE BACKGROUND (ALL PAGES)
+   ========================================================================== */
+
+/* ==========================================================================
+   3D DEVOPS LIFECYCLE TEXT LABELS
+   ========================================================================== */
+.devops-3d-text-label {
+  position: absolute;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  /* SOLID, BULLETPROOF COLOR - NO WEB-KIT TRICKS */
+  color: #00f0ff;
+  background: transparent;
+
+  /* Gorgeous glowing shadow instead of a gradient */
+  text-shadow:
+    0 0 15px rgba(0, 240, 255, 0.9),
+    0 0 30px rgba(0, 240, 255, 0.4);
+
+  will-change: left, top, transform, opacity;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ==========================================================================
+   CINEMATIC CENTERED HERO SECTION
+   ========================================================================== */
+.centered-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* Offset for fixed nav */
+  position: relative;
+  z-index: 10;
+}
+
+.cinematic-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: #a0aec0;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.center-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.center-metrics {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.glow-text {
+  color: #00f0ff;
+  font-family: "Fira Code", monospace;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Glassmorphism Buttons */
+.cyber-btn,
+.cyber-panel {
+  background: rgba(10, 15, 30, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.cyber-btn:hover,
+.cyber-panel:hover {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ==========================================================================
+   AMBIENT FLOATING TECH STACK
+   ========================================================================== */
+
+/* Hide ambient badges on very small screens to avoid clutter */
+@media (max-width: 768px) {
+  .ambient-badge {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   SPLIT LAYOUT WITH RIGHT-SIDE FLOATING TECH
+   ========================================================================== */
+.hero-split-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.split-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem 2rem; /* Add more top padding to ensure it clears the header */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start; /* PREVENT CLIPPING: Do not use center alignment which clips top/bottom on small screens */
+  width: 100%;
+  min-height: 100vh;
+}
+
+.right-side-tech {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Push to the absolute right edge */
+  padding-right: 2rem;
+  perspective: 1000px;
+}
+
+/* Ensure Left Side styling is restored */
+.hero-split-layout .home-content {
+  text-align: left;
+  display: block;
+}
+.hero-split-layout .hero-actions {
+  justify-content: flex-start;
+}
+.hero-split-layout .hero-metrics {
+  justify-content: flex-start;
+}
+.hero-split-layout .intro {
+  max-width: 90%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 992px) {
+  .split-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 2rem 2rem; /* Add more top padding to ensure it clears the header */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start; /* PREVENT CLIPPING: Do not use center alignment which clips top/bottom on small screens */
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .metric-card-custom {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .metric-card-custom strong {
+    color: #3b82f6;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-card-custom span {
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* Socials */
+  .hero-socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-circle {
+    width: 40px;
+    height: 40px;
+    background: #0f172a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  .social-circle:hover {
+    background: #3b82f6;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 992px) {
+    .hero-metrics-custom {
+      flex-direction: column;
+    }
+  }
+}
+
+/* ==========================================================================
+   UNIFIED PREMIUM DARK SPACE THEME OVERRIDES
+   ========================================================================== */
+
+/* 1. Right Side Vertical Tech Stack (Dark Theme Fix) */
+.stack-badge {
+  background: rgba(10, 15, 30, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.badge-text {
+  color: #ffffff !important;
+}
+
+/* 2. Left Side Metric Cards (Dark Theme Fix) */
+.metric-card-custom {
+  background: rgba(10, 15, 30, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.15) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease;
+}
+
+.metric-card-custom:hover {
+  transform: translateY(-5px);
+  border-color: #00f0ff !important;
+  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.2) !important;
+  background: rgba(10, 15, 30, 0.8) !important;
+}
+
+.metric-card-custom strong {
+  color: #00f0ff !important; /* Cyan instead of standard blue */
+}
+
+.metric-card-custom span {
+  color: #cbd5e1 !important; /* Light gray instead of dark gray */
+}
+
+/* 3. Left Side Eyebrow & Subtitle (Cyan Unification) */
+.status-pill {
+  background: rgba(0, 240, 255, 0.1) !important;
+  color: #00f0ff !important;
+  border: 1px solid rgba(0, 240, 255, 0.3) !important;
+}
+
+.green-dot {
+  background-color: #00f0ff !important;
+  box-shadow:
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff !important;
+}
+
+.location-subtitle {
+  color: #00f0ff !important;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+/* 4. Left Side Action Buttons (Cyber/Glassmorphic Unification) */
+.btn-blue {
+  background: rgba(0, 240, 255, 0.1) !important;
+  color: #00f0ff !important;
+  border: 1px solid #00f0ff !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+.btn-blue:hover {
+  background: #00f0ff !important;
+  color: #050a15 !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+}
+
+.btn-white {
+  background: rgba(10, 15, 30, 0.7) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.btn-white:hover {
+  border-color: #00f0ff !important;
+  color: #00f0ff !important;
+}
+
+.btn-outline {
+  color: #cbd5e1 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+.btn-outline:hover {
+  border-color: #00f0ff !important;
+  color: #00f0ff !important;
+}
+
+/* 5. Left Side Stack Badges (Dark Glass) */
+.stack-pill {
+  background: rgba(0, 240, 255, 0.05) !important;
+  color: #00f0ff !important;
+  border: 1px solid rgba(0, 240, 255, 0.2) !important;
+}
+
+/* 6. Social Circles */
+.social-circle {
+  background: rgba(10, 15, 30, 0.8) !important;
+  border: 1px solid rgba(0, 240, 255, 0.2) !important;
+}
+.social-circle:hover {
+  background: #00f0ff !important;
+  color: #050a15 !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+/* ==========================================================================
+   NORD THEME (ARCTIC ICE / CALMING DEVELOPER AESTHETIC)
+   ========================================================================== */
+
+:root {
+  --nord-bg: #2e3440; /* Polar Night 0 */
+  --nord-card: #3b4252; /* Polar Night 1 */
+  --nord-border: #434c5e; /* Polar Night 2 */
+  --nord-fg: #d8dee9; /* Snow Storm 0 */
+  --nord-white: #eceff4; /* Snow Storm 2 */
+  --nord-cyan: #88c0d0; /* Frost 0 */
+  --nord-blue: #81a1c1; /* Frost 1 */
+  --nord-green: #a3be8c; /* Aurora Green */
+}
+
+/* 1. Nord Background Globally */
+html,
+body {
+  background: var(--nord-bg) !important;
+  color: var(--nord-fg) !important;
+}
+
+section {
+  background: transparent !important;
+}
+
+/* 2. Static Stack Badges (Right Side) */
+.stack-badge {
+  animation: none !important;
+  transform: none !important;
+  background: var(--nord-card) !important;
+  border: 1px solid var(--nord-border) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease;
+}
+.stack-badge:hover {
+  border-color: var(--nord-cyan) !important;
+}
+
+.badge-text {
+  color: var(--nord-white) !important;
+}
+
+/* 3. Left Side Text */
+.hero-title-custom {
+  color: var(--nord-white) !important;
+}
+
+.intro-custom {
+  color: var(--nord-fg) !important;
+}
+
+/* 4. Left Side Metrics */
+.metric-card-custom {
+  background: var(--nord-card) !important;
+  border: 1px solid var(--nord-border) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.metric-card-custom:hover {
+  transform: translateY(-3px);
+  border-color: var(--nord-cyan) !important;
+}
+
+.metric-card-custom strong {
+  color: var(--nord-cyan) !important;
+}
+
+.metric-card-custom span {
+  color: var(--nord-fg) !important;
+}
+
+/* 5. Pill and Subtitle */
+.status-pill {
+  background: rgba(163, 190, 140, 0.1) !important;
+  color: var(--nord-green) !important;
+  border: 1px solid rgba(163, 190, 140, 0.3) !important;
+}
+
+.green-dot {
+  background-color: var(--nord-green) !important;
+  box-shadow: 0 0 8px rgba(163, 190, 140, 0.5) !important;
+}
+
+.location-subtitle {
+  color: var(--nord-blue) !important;
+  text-shadow: none !important;
+}
+
+/* 6. Action Buttons */
+.btn-blue {
+  background: var(--nord-cyan) !important;
+  color: #2e3440 !important; /* Dark text on bright button */
+  border: none !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 10px rgba(136, 192, 208, 0.3) !important;
+}
+.btn-blue:hover {
+  background: #81a1c1 !important;
+}
+
+.btn-white {
+  background: var(--nord-white) !important;
+  color: #2e3440 !important;
+  border: none !important;
+  font-weight: 800 !important;
+}
+.btn-white:hover {
+  background: var(--nord-fg) !important;
+}
+
+.btn-outline {
+  color: var(--nord-cyan) !important;
+  border-color: var(--nord-border) !important;
+}
+.btn-outline:hover {
+  border-color: var(--nord-cyan) !important;
+}
+
+/* 7. Stack Row & Socials */
+.stack-pill {
+  background: var(--nord-card) !important;
+  color: var(--nord-cyan) !important;
+  border: 1px solid var(--nord-border) !important;
+}
+
+.social-circle {
+  background: var(--nord-card) !important;
+  color: var(--nord-fg) !important;
+  border: 1px solid var(--nord-border) !important;
+}
+.social-circle:hover {
+  background: var(--nord-cyan) !important;
+  border-color: var(--nord-cyan) !important;
+  color: #2e3440 !important;
+}
+
+/* Global Headings Fix */
+.heading,
+h2.title {
+  color: var(--nord-white) !important;
+}
+.heading span,
+h2.title span {
+  background: transparent !important;
+  color: var(--nord-cyan) !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+/* Global Dark Theme Cards */
+.project-card,
+.skill-box,
+.skill-card,
+.education-item,
+.timeline-content,
+.contact-card,
+.contact-form,
+.service-card,
+.certificate-card {
+  background: var(--nord-card) !important;
+  border: 1px solid var(--nord-border) !important;
+  color: var(--nord-fg) !important;
+  box-shadow: none !important;
+}
+.project-card:hover,
+.skill-box:hover,
+.skill-card:hover,
+.education-item:hover,
+.timeline-content:hover,
+.contact-card:hover,
+.service-card:hover,
+.certificate-card:hover {
+  border-color: var(--nord-cyan) !important;
+  background: #434c5e !important;
+}
+.project-card h3,
+.skill-box h3,
+.timeline-content h3,
+.certificate-card h3 {
+  color: var(--nord-cyan) !important;
+}
+
+/* ==========================================================================
+   RESTORE 3D CANVAS VISIBILITY
+   ========================================================================== */
+#devops-bg-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -100 !important;
+  pointer-events: none !important;
+}
+
+html,
+body {
+  background: transparent !important; /* Let canvas show through */
+  background-color: #03050a !important; /* Fallback very dark color */
+}
+
+/* ==========================================================================
+   3D CANVAS Z-INDEX FIX (FORCE VISIBILITY)
+   ========================================================================== */
+
+/* The Canvas must sit perfectly between the background color and the content */
+#devops-bg-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -10 !important; /* Put canvas behind content */
+  pointer-events: none !important;
+}
+
+/* Make body background transparent so canvas shows through */
+html,
+body {
+  background: transparent !important;
+}
+
+/* Use a pseudo-element for the actual solid background color so it sits BEHIND the canvas */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(
+    --nord-bg,
+    #000000
+  ) !important; /* Fallback to black if no theme */
+  z-index: -20 !important; /* Behind the canvas (-10) */
+}
+
+/* Ensure the Home section is completely transparent to see the 3D logo */
+section.home {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+}
